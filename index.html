@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function update() {
+            let x = document.getElementsByClassName("length")[0].value;
+            let y = document.getElementsByClassName("width")[0].value;
+            let sqr = Number(x)*Number(x)
+            let rec = Number(x)*Number(y)
+            let cir = 3.14*Number(x)*Number(x)
+            document.getElementsByClassName("sqr")[0].innerHTML = "The Area of square is: " + sqr;
+            document.getElementsByClassName("rec")[0].innerHTML = "The Area of rectingular is: " + rec;
+            document.getElementsByClassName("cir")[0].innerHTML = "The Area of circle is: " + cir;
+       
+        }
+        window.onload= function(){
+             document.getElementsByClassName("title")[0].innerHTML="Converter"
+                }
+    </script>
+    <style>
+        html{
+            background-color: #3E3E42;
+            color: white;
+            width: 100%;
+            margin: 10px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        .title{
+            grid-area: 1/1/2/2;
+            color: white;
+            font-size: 100px;
+        }
+        .length{
+            grid-area: 2/1/3/3;
+            height: 70px;
+            margin: 50px;
+            border-radius: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+        .width{
+            grid-area: 3/1/4/3;
+            height: 70px;
+            margin: 50px;
+            border-radius: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+        .out{
+            grid-area: 3/1/4/3;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            font-weight: bold;
+        }
+        .sqr{
+            font-size: 32px;
+            grid-area: 4/1/5/3;
+        }
+        .rec{
+            font-size: 32px;
+            grid-area: 5/1/6/3;
+        }
+        .cir{
+            font-size: 32px;
+            grid-area: 6/1/7/3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+    <h1 class="title"></h1>
+    <input class="length" type="text" oninput="update()" placeholder="Length">
+    <input class="width" type="text" oninput="update()" placeholder="Width">
+    <p class="sqr"></p>
+    <p class="rec"></p>
+    <p class="cir"></p>
+    </div>
+</body>
+</html>
